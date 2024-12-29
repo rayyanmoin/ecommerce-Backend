@@ -21,8 +21,28 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public List<Users> getlist(){
-        return userRepository.findAll();
+    public List<UserListDto> getlist(){
+        List<UserListDto> userListDtos = new ArrayList<>();
+
+        List<Users> users = userRepository.findAll();
+        for (Users user : users) {
+            UserListDto dto = new UserListDto();
+            dto.setId(user.getId());
+            dto.setFirstName(user.getFirstName());
+            dto.setLastName(user.getLastName());
+            dto.setEmail(user.getEmail());
+            dto.setCreatedAt(user.getCreatedAt());
+            dto.setPassword(user.getPassword());
+            dto.setPhone(user.getPhone());
+            dto.setRoleID(user.getRoleID());
+            dto.setUpdatedAt(user.getUpdatedAt());
+            dto.setUsername(user.getUsername());
+            dto.setRoleName(user.getRole().getName());
+
+            // Add the DTO to the list
+            userListDtos.add(dto);
+        }
+        return  userListDtos;
     }
 
 
