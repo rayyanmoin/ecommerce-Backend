@@ -9,8 +9,6 @@ public class CategoryEditDto {
 
     private String name;
     private String description;
-    private Category parentCategory;
-    private Set<Category> subCategories;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -30,22 +28,6 @@ public class CategoryEditDto {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Category getParentCategory() {
-        return parentCategory;
-    }
-
-    public void setParentCategory(Category parentCategory) {
-        this.parentCategory = parentCategory;
-    }
-
-    public Set<Category> getSubCategories() {
-        return subCategories;
-    }
-
-    public void setSubCategories(Set<Category> subCategories) {
-        this.subCategories = subCategories;
     }
 
     public LocalDateTime getCreatedAt() {

@@ -1,9 +1,7 @@
 package com.rayyan.ecommerce.service;
 
-import com.rayyan.ecommerce.dto.AddressEditDto;
 import com.rayyan.ecommerce.dto.CategoryAddDto;
 import com.rayyan.ecommerce.dto.CategoryEditDto;
-import com.rayyan.ecommerce.ecommerceObjects.Address;
 import com.rayyan.ecommerce.ecommerceObjects.Category;
 import com.rayyan.ecommerce.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +25,6 @@ public class CategoryService {
         Category category = new Category();
         category.setName(categoryAddDto.getName());
         category.setDescription(categoryAddDto.getDescription());
-        category.setParentCategory(categoryAddDto.getParentCategory());
-        category.setSubCategories(categoryAddDto.getSubCategories());
         category.setCreatedAt(categoryAddDto.getCreatedAt());
         category.setUpdatedAt(categoryAddDto.getUpdatedAt());
 
@@ -48,8 +44,6 @@ public class CategoryService {
         Category existingCategory = findCategoryById(id);
         existingCategory.setName(categoryEditDto.getName());
         existingCategory.setDescription(categoryEditDto.getDescription());
-        existingCategory.setParentCategory(categoryEditDto.getParentCategory());
-        existingCategory.setSubCategories(categoryEditDto.getSubCategories());
         existingCategory.setCreatedAt(categoryEditDto.getCreatedAt());
         existingCategory.setUpdatedAt(categoryEditDto.getUpdatedAt());
 
